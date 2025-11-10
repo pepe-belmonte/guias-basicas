@@ -1,0 +1,83 @@
+// grid para formularios
+$num-cols: 12;
+$media-sm: 873px;
+$media-md: 1024px;
+$media-lg: 1280px;
+
+// mixin para generar las columnas
+@mixin generate-columns($prefix) {
+
+  @if ($prefix =='xs') {
+    .d-none {
+      display: none;
+    }
+  }
+
+  @else {
+    .d-none-#{$prefix} {
+      display: none;
+    }
+  }
+
+  .d-block-#{$prefix} {
+    display: block;
+  }
+
+  @for $i from 0 through $num-cols {
+
+    .col-#{$prefix}-#{$i},
+    .col-#{$prefix}-offset-#{$i} {
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+    }
+
+    @if $i ==0 {
+      .col-#{$prefix}-offset-#{$i} {
+        margin-left: 0;
+      }
+    }
+
+    @else {
+      .col-#{$prefix}-#{$i} {
+        $percentage: calc(100% / $num-cols) * $i;
+        -ms-flex-preferred-size: $percentage;
+        flex-basis: $percentage;
+        max-width: $percentage;
+      }
+
+      .col-#{$prefix}-offset-#{$i} {
+        margin-left: calc(100% / $num-cols) * $i;
+      }
+    }
+  }
+}
+
+.min-height-field {
+  min-height: 5.6em;
+}
+
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+}
+
+@include generate-columns('xs');
+
+@media only screen and (min-width: $media-sm) {
+  @include generate-columns('sm');
+}
+
+@media only screen and (min-width: $media-md) {
+  @include generate-columns('md');
+}
+
+@media only screen and (min-width: $media-lg) {
+  @include generate-columns('lg');
+}
