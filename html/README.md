@@ -7,18 +7,18 @@ Una etiqueta HTML es una instrucción que le dice al navegador cómo debe mostra
 
 *Tip VSCode: !+Enter (escribe estructura básica HTML)*
 ```
-```<!DOCTYPE html>```
-```<html lang="en">```
-```<head>```
-    ```<meta charset="UTF-8">```
-    ```<meta name="viewport" content="width=device-width, initial-scale=1.0">```
-    ```<title>```Document```</title>```
-    ```<link rel="stylesheet" href="styles.css">```
-```</head>```
-```<body>```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     
-```</body>```
-```</html>```
+</body>
+</html>
 ```
 
 ## Etiquetas básicas
